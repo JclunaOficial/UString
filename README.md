@@ -17,3 +17,9 @@ metodos extendidos (`extension method`) con los tipos de datos `string` y `DateT
 El proyecto esta creado con VS2015 Community y .NET v4.0, pero se pueden copiar los bytes (código) a otros 
 IDEs para compilar y generar la libreria, prosupuesto configurando los ajustes necesarios para tener el 
 producto final.
+
+### Compilado
+
+Si solo quieres la versión compilada de la libreria, entonces la puedes descargar haciendo 
+[click aquí](https://www.dropbox.com/sh/dk5x9x4733xb3ea/AADVJLizScmX0UTfe3J4ywbZa?dl=0 "Dropbox").
+Vas a encontrar todas las versiones que se han generado (Release y Debug); recomiendo uses la más reciente.

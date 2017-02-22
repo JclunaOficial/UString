@@ -21,5 +21,6 @@ producto final.
 ### Compilado
 
 Si solo quieres la versión compilada de la libreria, entonces la puedes descargar haciendo 
-[click aquí](https://www.dropbox.com/sh/dk5x9x4733xb3ea/AADVJLizScmX0UTfe3J4ywbZa?dl=0 "Dropbox").
-Vas a encontrar todas las versiones que se han generado (Release y Debug); recomiendo uses la más reciente.
+<a target="_blank" href="https://www.dropbox.com/sh/dk5x9x4733xb3ea/AADVJLizScmX0UTfe3J4ywbZa?dl=0"
+title="Dropbox">click aquí</a>. Vas a encontrar todas las versiones que se han generado 
+(Release y Debug); recomiendo uses la más reciente.

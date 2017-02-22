@@ -35,6 +35,12 @@
             return value.Clean(length).ToUpper();
         }
 
+        /// <summary>
+        /// Limpiar, truncar y convertir un string a minúsculas
+        /// </summary>
+        /// <param name="value">String a procesar</param>
+        /// <param name="length">Longitud a truncar el String</param>
+        /// <returns></returns>
         public static string Lower(this string value, int length = 0)
         {
             // consumir función Clean() y convertir a minúsculas

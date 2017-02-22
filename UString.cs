@@ -1,9 +1,15 @@
 ﻿using System;
+using System.Text;
 
-namespace Jcluna
+namespace JclunaOficial
 {
     public static class UString
     {
+        /// <summary>
+        /// Códificación de caracteres latinos (ISO-8859-1)
+        /// </summary>
+        public static readonly Encoding Latin = Encoding.GetEncoding("ISO-8859-1");
+
         /// <summary>
         /// Limpiar y truncar un string
         /// </summary>
@@ -33,7 +39,7 @@ namespace Jcluna
         /// <returns></returns>
         public static string Upper(this string value, int length = 0)
         {
-            // consumir función Clean() y convertir a mayúsculas
+            // limpiar y convertir a mayúsculas
             return value.Clean(length).ToUpper();
         }
 
@@ -45,7 +51,7 @@ namespace Jcluna
         /// <returns></returns>
         public static string Lower(this string value, int length = 0)
         {
-            // consumir función Clean() y convertir a minúsculas
+            // limpiar y convertir a minúsculas
             return value.Clean(length).ToLower();
         }
 
@@ -57,7 +63,7 @@ namespace Jcluna
         /// <returns></returns>
         public static string SingleSpace(this string value, int length)
         {
-            // cosumir función Clean() para remover espacios inicial/final
+            // limpiar string
             var result = value.Clean();
             if (result.Length > 0)
             {
@@ -77,6 +83,34 @@ namespace Jcluna
             }
 
             // string procesado
+            return result;
+        }
+
+        /// <summary>
+        /// Convertir un string a un string en Base64
+        /// </summary>
+        /// <param name="value">String a procesar</param>
+        /// <returns></returns>
+        public static string Base64Convert(this string value)
+        {
+            // limpiar string
+            var result = value.Clean();
+            if (result.Length > 0) // convertir a Base64 un texto plano
+                result = Convert.ToBase64String(Latin.GetBytes(result));
+            return result;
+        }
+
+        /// <summary>
+        /// Extraer un string desde un string en Base64
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static string Base64Extract(this string value)
+        {
+            // limpiar string
+            var result = value.Clean();
+            if (result.Length > 0) // extraer el texto plano de un string en Base64
+                result = Latin.GetString(Convert.FromBase64String(result));
             return result;
         }
     }

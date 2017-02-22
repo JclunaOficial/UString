@@ -7,8 +7,8 @@
     <ProjectGuid>{C2D6C8C5-E0A9-456A-85A0-C9078DBB906F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Jcluna</RootNamespace>
-    <AssemblyName>Jcluna.UString</AssemblyName>
+    <RootNamespace>JclunaOficial</RootNamespace>
+    <AssemblyName>JclunaOficial.UString</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -28,7 +28,9 @@
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <WarningLevel>0</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <DocumentationFile>bin\Release\JclunaOficial.UString.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

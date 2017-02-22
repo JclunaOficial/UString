@@ -14,3 +14,6 @@ metodos extendidos (`extension method`) con los tipos de datos `string` y `DateT
 * **Microsoft .NET v4.0+**, _seguramente incluido en VS2015 pero probablemente se quiera compilar usando la linea de comandos_.
 * **Xamarin Studio**, _en caso de querer compilar en otra plataforma (Linux o Mac), aunque el compilado con Windows se puede consumir en otras plataformas_.
 
+El proyecto esta creado con VS2015 Community y .NET v4.0, pero se pueden copiar los bytes (código) a otros 
+IDEs para compilar y generar la libreria, prosupuesto configurando los ajustes necesarios para tener el 
+producto final.

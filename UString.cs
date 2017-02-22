@@ -145,5 +145,21 @@ namespace JclunaOficial
             }
             return result;
         }
+
+        /// <summary>
+        /// Convertir un string con fecha en formato ISO-8601 a un objeto <see cref="DateTime"/>
+        /// </summary>
+        /// <param name="value">String a procesar</param>
+        /// <returns>
+        /// Regresa un objeto <see cref="DateTime"/> con la fecha que representa el parametro value;
+        /// en el caso de no ser una fecha valida el resultado sera <see cref="DateTime.MinValue"/>
+        /// </returns>
+        public static DateTime DateFrom(this string value)
+        {
+            // ejecutar la conversión directa
+            var result = DateTime.MinValue;
+            DateTime.TryParse(value.Clean(), out result);
+            return result;
+        }
     }
 }

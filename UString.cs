@@ -3,6 +3,9 @@ using System.Text;
 
 namespace JclunaOficial
 {
+    /// <summary>
+    /// Funciones (extension) de utilidad para strings
+    /// </summary>
     public static class UString
     {
         /// <summary>
@@ -111,6 +114,35 @@ namespace JclunaOficial
             var result = value.Clean();
             if (result.Length > 0) // extraer el texto plano de un string en Base64
                 result = Latin.GetString(Convert.FromBase64String(result));
+            return result;
+        }
+
+        /// <summary>
+        /// Extraer la fecha en formato ISO-8601 de un objeto <see cref="DateTime"/>
+        /// </summary>
+        /// <param name="value">Objeto <see cref="DateTime"/> a procesar</param>
+        /// <param name="excludeTime">Excluir la hora de la fecha</param>
+        /// <param name="excludeSeconds">Excluir los segundos de la hora</param>
+        /// <returns>Regresa un string con formato ISO-8601 (yyyy-MM-ddTHH:mm:ss)</returns>
+        public static string DateTo(this DateTime value, bool excludeTime = false, bool excludeSeconds = false)
+        {
+            // verificar que value tenga fecha asignada
+            var result = string.Empty;
+            if (value.Equals(DateTime.MinValue))
+                return result; // no hay fecha
+
+            // formatear la fecha en base al ISO-8601
+            result = string.Format("{0:yyyy-MM-dd}", value);
+
+            // integrar la hora y minutos
+            if (excludeTime == false)
+            {
+                result += string.Format("T{0:HH:mm}", value);
+
+                // integrar los segundos
+                if (excludeSeconds == false)
+                    result += string.Format(":{0:ss}", value);
+            }
             return result;
         }
     }

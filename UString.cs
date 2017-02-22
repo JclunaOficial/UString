@@ -1,4 +1,6 @@
-﻿namespace Jcluna
+﻿using System;
+
+namespace Jcluna
 {
     public static class UString
     {
@@ -45,6 +47,37 @@
         {
             // consumir función Clean() y convertir a minúsculas
             return value.Clean(length).ToLower();
+        }
+
+        /// <summary>
+        /// Reemplazar multiples espacios a uno solo y truncar un string
+        /// </summary>
+        /// <param name="value">String a procesar</param>
+        /// <param name="length">Longitud a truncar el String</param>
+        /// <returns></returns>
+        public static string SingleSpace(this string value, int length)
+        {
+            // cosumir función Clean() para remover espacios inicial/final
+            var result = value.Clean();
+            if (result.Length > 0)
+            {
+                while (true)
+                {
+                    // localizar espacios dobles y reemplazar por un espacio
+                    if (result.IndexOf("  ", StringComparison.Ordinal) <= -1)
+                        break; // ya no hay espacios dobles
+
+                    // reemplazar espacio doble por un espacio
+                    result = result.Replace("  ", " ");
+                }
+
+                // truncar el string si length es mayor a cero
+                if (length > 0 && result.Length > length)
+                    result = result.Substring(0, length);
+            }
+
+            // string procesado
+            return result;
         }
     }
 }

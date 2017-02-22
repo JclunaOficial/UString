@@ -30,7 +30,8 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>0</WarningLevel>
     <UseVSHostingProcess>false</UseVSHostingProcess>
-    <DocumentationFile>bin\Release\JclunaOficial.UString.xml</DocumentationFile>
+    <DocumentationFile>
+    </DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

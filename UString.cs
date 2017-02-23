@@ -64,7 +64,7 @@ namespace JclunaOficial
         /// <param name="value">String a procesar</param>
         /// <param name="length">Longitud a truncar el String</param>
         /// <returns></returns>
-        public static string SingleSpace(this string value, int length)
+        public static string SingleSpace(this string value, int length = 0)
         {
             // limpiar string
             var result = value.Clean();

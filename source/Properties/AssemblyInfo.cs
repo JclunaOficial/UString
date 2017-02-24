@@ -2,9 +2,9 @@
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("UString")]
-[assembly: AssemblyDescription("Funciones de utilidad para strings")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Jcluna")]
+[assembly: AssemblyDescription("Librería para manipular Strings")]
+[assembly: AssemblyCompany("jcluna.oficial@gmail.com")]
+[assembly: AssemblyProduct("JclunaOficial")]
 [assembly: AssemblyCopyright("Copyright 2017 - Juan C. Luna H.")]
 [assembly: AssemblyVersion("2017.02.21.2311")]
 [assembly: AssemblyFileVersion("2017.02.21.2311")]

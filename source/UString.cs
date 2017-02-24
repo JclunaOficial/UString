@@ -4,7 +4,7 @@ using System.Text;
 namespace JclunaOficial
 {
     /// <summary>
-    /// Funciones (extension) de utilidad para strings
+    /// Funciones (extension) para manipular strings
     /// </summary>
     public static class UString
     {

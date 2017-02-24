@@ -103,3 +103,69 @@ namespace MyApplication
 }
 
 ```
+**Y ¿para qué me sirve?**
+
+A simple vista no parece aportar mucho, pero te invito a que veas el siguiente código, analizalo y reflexionalo; considerando la parte simplificada del código, estas funciones de utilidad te ayudarian a escribir menos código repetitivo y sobre todo tener una mejor lectura del código.
+
+```csharp
+using JclunaOficial; // importar el namespace
+using System;
+
+namespace MyApplication
+{
+    class Persona
+    {
+        /*
+         * REGLA DE EVALUACIÓN
+         * -----------------------------------------------------------------------------------------
+         * Uno de los requerimientos es garantizar que el valor 
+         * que un usuario asigna a un atributo del objeto cumpla
+         * con las siguientes condiciones:
+         * 
+         *  1. el valor del atributo no puede quedar nulo
+         *  2. el valor del atributo debe estar en mayúsculas
+         *  3. el valor del atributo solo debe tener un espacio intermedio entre palabras
+         *  4. el valor del atributo no debe tener más de 150 caracteres
+         * -----------------------------------------------------------------------------------------
+         * */
+        private string _eTradicional;
+        private string _eSimplificada;
+
+        // ejemplo de la forma tradicional de aplicar la regla
+        public string EvaluacionTradicional
+        {
+            get { return _eTradicional; }
+            set
+            {
+                // 1. no puede quedar nulo
+                _eTradicional = (value == null ? "" : value.Trim());
+
+                // 2. convertir a mayúsculas
+                _eTradicional.ToUpper();
+
+                // 3. debe quedar solamente un espacio entre palabras
+                while (true)
+                {
+                    // determinar si hay espacios dobles
+                    if (_eTradicional.Contains("  ") == false)
+                        break; // ya no hay expacios dobles
+
+                    // reemplazar los espacios dobles por uno solo
+                    _eTradicional = _eTradicional.Replace("  ", " ");
+                }
+
+                // 4. no debe tener más de 150 caracteres
+                if (_eTradicional.Length > 150)
+                    _eTradicional = _eTradicional.Substring(0, 150);
+            }
+        }
+
+        // ejemplo de la forma simplificada de aplicar la regla
+        public string EvaluacionSimplificada
+        {
+            get { return _eSimplificada; }
+            set { _eSimplificada = value.SingleSpace().Upper(150); } // <- 1,3,2,4: en una sola línea
+        }
+    }
+}
+```
